@@ -82,7 +82,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/mnt/c/Users/Hello/CLionProjects/Deque/deque.h">
+			<Option target="Deque"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/Hello/CLionProjects/Deque/main.cpp">
+			<Option target="Deque"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Hello/CLionProjects/Deque/small_tests.h">
 			<Option target="Deque"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/Hello/CLionProjects/Deque/CMakeLists.txt">

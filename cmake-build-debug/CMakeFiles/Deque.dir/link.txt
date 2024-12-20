@@ -1,1 +1,1 @@
-/usr/bin/c++ -g CMakeFiles/Deque.dir/main.cpp.o -o Deque 
+/usr/bin/c++ -g -fno-omit-frame-pointer -fsanitize=address CMakeFiles/Deque.dir/main.cpp.o -o Deque 
