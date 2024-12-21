@@ -7,7 +7,7 @@
 #include <string>
 #include <iterator>
 #include <strings.h>
-
+#include <compare>
 template<typename T>
 struct Deque {
   template<bool is_const>
@@ -328,18 +328,29 @@ struct Deque {
 
   template<bool is_const>
   struct universe_iterator {
+    using value_type = T;
     using difference_type = std::ptrdiff_t;
     using reference = std::conditional_t<is_const, const T&, T&>;
-    using pointer = std::conditional_t<is_const, const T*, T*>;
+    using pointer = std::conditional_t<is_const,const T*, T*>;
     using iterator_category = std::random_access_iterator_tag;
-    static constexpr size_t kBacketSize = Deque<T>::kBacketSize;
+    static constexpr size_t kBacketSize = Deque::kBacketSize;
     T** backet;
     // index принадлежит диапазону [0,kBacketSize-1]
     size_t index;
-    universe_iterator(const universe_iterator&) = default;
     universe_iterator(T** backet, size_t index):backet(backet),index(index){}
-    universe_iterator(const universe_iterator<false>& it):backet(it.backet),index(it.index) {}
+    template<bool other_const>
+    universe_iterator(const universe_iterator<other_const>& it,
+                     std::enable_if_t<(!is_const && !other_const) || (is_const && other_const)
+                     || (is_const && !other_const)>* = nullptr)
+        : backet(it.backet), index(it.index) {}
     universe_iterator& operator+=(int n) {
+      index += n % kBacketSize;
+      backet += n % kBacketSize + index / kBacketSize;
+      index%=kBacketSize;
+      return *this;
+    }
+    universe_iterator& operator-=(int n) {
+      n = -n;
       index += n % kBacketSize;
       backet += n % kBacketSize + index / kBacketSize;
       index%=kBacketSize;
@@ -361,14 +372,56 @@ struct Deque {
       operator+=(-1);
       return copy;
     }
-    reference operator*() {
+    reference operator*()const {
       return *(*backet+index);
     }
-    pointer operator->() {
+    pointer operator->()const {
       return *backet+index;
     }
-  };
 
+    difference_type operator-(const universe_iterator& it)const {
+      return (backet-it.backet)*kBacketSize + index - it.index;
+    }
+    friend universe_iterator operator+(int n, const universe_iterator& it) {
+      auto copy = it;
+      copy+=n;
+      return copy;
+    }
+    friend universe_iterator operator+(const universe_iterator& it, int n) {
+      return n+it;
+    }
+    friend universe_iterator operator-(const universe_iterator& it, int n) {
+      auto copy = it;
+      copy-=n;
+      return copy;
+    }
+    friend universe_iterator operator-(int n, const universe_iterator& it) {
+      return it-n;
+    }
+    bool operator==(const universe_iterator& it) const {
+      return (*this - it) == 0;
+    }
+
+    bool operator!=(const universe_iterator& it) const {
+      return (*this - it) != 0;
+    }
+
+    bool operator<(const universe_iterator& it) const {
+      return (*this - it) < 0;
+    }
+
+    bool operator<=(const universe_iterator& it) const {
+      return (*this - it) <= 0;
+    }
+
+    bool operator>(const universe_iterator& it) const {
+      return (*this - it) > 0;
+    }
+
+    bool operator>=(const universe_iterator& it) const {
+      return (*this - it) >= 0;
+    }
+  };
 
   iterator begin() {
     return iterator{backets+firstBacket,firstElement};
@@ -389,22 +442,22 @@ struct Deque {
     return cend();
   }
   reverse_iterator rbegin() {
-    return reverse_iterator(end()-1);
+    return reverse_iterator(end());
   }
   const_reverse_iterator crbegin()const {
-    return reverse_iterator(cend()-1);
+    return reverse_iterator(cend());
   }
   const_reverse_iterator rbegin()const {
     return crbegin();
   }
   reverse_iterator rend() {
-    return reverse_iterator(begin()-1);
+    return reverse_iterator(begin());
   }
   const_reverse_iterator crend()const {
-    return reverse_iterator(begin()-1);
+    return reverse_iterator(begin());
   }
   const_reverse_iterator rend()const {
-    return reverse_iterator(begin()-1);
+    return reverse_iterator(begin());
   }
   void Print() const {
     for (int i = 0; i < size(); ++i) {
@@ -427,49 +480,3 @@ struct Deque {
     return s;
   }
 };
-template<typename T>
-typename Deque<T>::iterator::difference_type operator-(
-    const typename Deque<T>::const_iterator& it1,
-    const typename Deque<T>::const_iterator& it2) {
-  return (it1.backet-it2.backet)*Deque<T>::kBacketSize + it1.index - it2.index;
-}
-
-template<typename T>
-std::strong_ordering operator<=>(
-    const typename Deque<T>::const_iterator& it1,
-    const typename Deque<T>::const_iterator& it2) {
-  return (it1-it2) <=> 0;
-}
-
-template<typename T>
-bool operator==(
-    const typename Deque<T>::const_iterator& it1,
-    const typename Deque<T>::const_iterator& it2) {
-  return (it1 - it2) == 0;
-}
-
-template<typename T>
-typename Deque<T>::iterator operator+(
-    const typename Deque<T>::iterator& it,
-    int n) {
-  auto copy = it;
-  copy += n;
-  return copy;
-}
-
-// Для константного итератора
-template<typename T>
-typename Deque<T>::const_iterator operator+(
-    const typename Deque<T>::const_iterator& it,
-    int n) {
-  auto copy = it;
-  copy += n;
-  return copy;
-}
-
-template<typename T, bool is_const>
-typename Deque<T>::template universe_iterator<is_const> operator+(
-    int n,
-    const typename Deque<T>::template universe_iterator<is_const>& it) {
-  return it + n;
-}

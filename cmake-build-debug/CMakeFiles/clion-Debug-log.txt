@@ -8,6 +8,6 @@ CMake Deprecation Warning:
   use the cmake-file-api(7) to view CMake-generated project build trees.
 
 
--- Configuring done (0.5s)
--- Generating done (0.8s)
+-- Configuring done (0.2s)
+-- Generating done (0.6s)
 -- Build files have been written to: /mnt/c/Users/Hello/CLionProjects/Deque/cmake-build-debug
