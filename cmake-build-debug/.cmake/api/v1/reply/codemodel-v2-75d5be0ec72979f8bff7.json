@@ -15,7 +15,8 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -30,7 +31,8 @@
 					"name" : "Deque",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -41,6 +43,13 @@
 					"id" : "Deque::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-Deque-Debug-e238127ee3b2a9fd8915.json",
 					"name" : "Deque",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Tests::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Tests-Debug-57dcd9abab32c57641f1.json",
+					"name" : "Tests",
 					"projectIndex" : 0
 				}
 			]

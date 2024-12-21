@@ -129,6 +129,19 @@ Deque/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Deque.dir/build.make CMakeFiles/Deque.dir/build
 .PHONY : Deque/fast
 
+#=============================================================================
+# Target rules for targets named Tests
+
+# Build rule for target.
+Tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Tests
+.PHONY : Tests
+
+# fast build rule for target.
+Tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/build
+.PHONY : Tests/fast
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -153,6 +166,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Deque.dir/build.make CMakeFiles/Deque.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+tests.o: tests.cpp.o
+.PHONY : tests.o
+
+# target to build an object file
+tests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/tests.cpp.o
+.PHONY : tests.cpp.o
+
+tests.i: tests.cpp.i
+.PHONY : tests.i
+
+# target to preprocess a source file
+tests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/tests.cpp.i
+.PHONY : tests.cpp.i
+
+tests.s: tests.cpp.s
+.PHONY : tests.s
+
+# target to generate assembly for a file
+tests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tests.dir/build.make CMakeFiles/Tests.dir/tests.cpp.s
+.PHONY : tests.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,9 +199,13 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Deque"
+	@echo "... Tests"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... tests.o"
+	@echo "... tests.i"
+	@echo "... tests.s"
 .PHONY : help
 
 

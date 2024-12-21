@@ -1,3 +1,4 @@
 /mnt/c/Users/Hello/CLionProjects/Deque/cmake-build-debug/CMakeFiles/Deque.dir
+/mnt/c/Users/Hello/CLionProjects/Deque/cmake-build-debug/CMakeFiles/Tests.dir
 /mnt/c/Users/Hello/CLionProjects/Deque/cmake-build-debug/CMakeFiles/edit_cache.dir
 /mnt/c/Users/Hello/CLionProjects/Deque/cmake-build-debug/CMakeFiles/rebuild_cache.dir

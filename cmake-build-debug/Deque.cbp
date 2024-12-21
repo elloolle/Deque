@@ -61,6 +61,50 @@
 					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Hello/CLionProjects/Deque/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="Tests">
+				<Option output="/mnt/c/Users/Hello/CLionProjects/Deque/cmake-build-debug/Tests" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Hello/CLionProjects/Deque/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/13"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/13"/>
+					<Add directory="/usr/include/c++/13/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/13/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Hello/CLionProjects/Deque/cmake-build-debug/Makefile&quot;  VERBOSE=1 Tests"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Hello/CLionProjects/Deque/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Hello/CLionProjects/Deque/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Hello/CLionProjects/Deque/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Tests/fast">
+				<Option output="/mnt/c/Users/Hello/CLionProjects/Deque/cmake-build-debug/Tests" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Hello/CLionProjects/Deque/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/13"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/13"/>
+					<Add directory="/usr/include/c++/13/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/13/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Hello/CLionProjects/Deque/cmake-build-debug/Makefile&quot;  VERBOSE=1 Tests/fast"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Hello/CLionProjects/Deque/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Hello/CLionProjects/Deque/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Hello/CLionProjects/Deque/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="/mnt/c/Users/Hello/CLionProjects/Deque/cmake-build-debug"/>
 				<Option type="4"/>
@@ -90,6 +134,9 @@
 		</Unit>
 		<Unit filename="/mnt/c/Users/Hello/CLionProjects/Deque/small_tests.h">
 			<Option target="Deque"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Hello/CLionProjects/Deque/tests.cpp">
+			<Option target="Tests"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/Hello/CLionProjects/Deque/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

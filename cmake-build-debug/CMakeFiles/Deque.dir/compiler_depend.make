@@ -9,6 +9,7 @@ CMakeFiles/Deque.dir/main.cpp.o: /mnt/c/Users/Hello/CLionProjects/Deque/main.cpp
   /usr/include/asm-generic/errno.h \
   /usr/include/assert.h \
   /usr/include/c++/13/algorithm \
+  /usr/include/c++/13/array \
   /usr/include/c++/13/backward/binders.h \
   /usr/include/c++/13/bit \
   /usr/include/c++/13/bits/algorithmfwd.h \
@@ -53,6 +54,7 @@ CMakeFiles/Deque.dir/main.cpp.o: /mnt/c/Users/Hello/CLionProjects/Deque/main.cpp
   /usr/include/c++/13/bits/node_handle.h \
   /usr/include/c++/13/bits/ostream.tcc \
   /usr/include/c++/13/bits/ostream_insert.h \
+  /usr/include/c++/13/bits/parse_numbers.h \
   /usr/include/c++/13/bits/postypes.h \
   /usr/include/c++/13/bits/predefined_ops.h \
   /usr/include/c++/13/bits/ptr_traits.h \
@@ -83,6 +85,7 @@ CMakeFiles/Deque.dir/main.cpp.o: /mnt/c/Users/Hello/CLionProjects/Deque/main.cpp
   /usr/include/c++/13/bits/stl_tempbuf.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
   /usr/include/c++/13/bits/stl_vector.h \
+  /usr/include/c++/13/bits/stream_iterator.h \
   /usr/include/c++/13/bits/streambuf.tcc \
   /usr/include/c++/13/bits/streambuf_iterator.h \
   /usr/include/c++/13/bits/string_view.tcc \
@@ -121,6 +124,7 @@ CMakeFiles/Deque.dir/main.cpp.o: /mnt/c/Users/Hello/CLionProjects/Deque/main.cpp
   /usr/include/c++/13/iosfwd \
   /usr/include/c++/13/iostream \
   /usr/include/c++/13/istream \
+  /usr/include/c++/13/iterator \
   /usr/include/c++/13/limits \
   /usr/include/c++/13/new \
   /usr/include/c++/13/numbers \
@@ -132,6 +136,8 @@ CMakeFiles/Deque.dir/main.cpp.o: /mnt/c/Users/Hello/CLionProjects/Deque/main.cpp
   /usr/include/c++/13/pstl/glue_numeric_defs.h \
   /usr/include/c++/13/pstl/pstl_config.h \
   /usr/include/c++/13/random \
+  /usr/include/c++/13/ranges \
+  /usr/include/c++/13/span \
   /usr/include/c++/13/stdexcept \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
@@ -153,6 +159,7 @@ CMakeFiles/Deque.dir/main.cpp.o: /mnt/c/Users/Hello/CLionProjects/Deque/main.cpp
   /usr/include/c++/13/type_traits \
   /usr/include/c++/13/typeinfo \
   /usr/include/c++/13/unordered_set \
+  /usr/include/c++/13/variant \
   /usr/include/c++/13/vector \
   /usr/include/ctype.h \
   /usr/include/endian.h \
@@ -271,9 +278,11 @@ CMakeFiles/Deque.dir/main.cpp.o: /mnt/c/Users/Hello/CLionProjects/Deque/main.cpp
 
 /usr/include/x86_64-linux-gnu/sys/single_threaded.h:
 
-/usr/include/c++/13/pstl/execution_defs.h:
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
-/usr/include/c++/13/bits/basic_ios.tcc:
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h:
 
@@ -303,8 +312,6 @@ CMakeFiles/Deque.dir/main.cpp.o: /mnt/c/Users/Hello/CLionProjects/Deque/main.cpp
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h:
 
-/usr/include/c++/13/tr1/riemann_zeta.tcc:
-
 /usr/include/c++/13/cmath:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h:
@@ -312,6 +319,8 @@ CMakeFiles/Deque.dir/main.cpp.o: /mnt/c/Users/Hello/CLionProjects/Deque/main.cpp
 /usr/include/c++/13/clocale:
 
 /usr/include/c++/13/tr1/poly_hermite.tcc:
+
+/usr/include/c++/13/variant:
 
 /usr/include/c++/13/bits/uses_allocator_args.h:
 
@@ -323,21 +332,11 @@ CMakeFiles/Deque.dir/main.cpp.o: /mnt/c/Users/Hello/CLionProjects/Deque/main.cpp
 
 /usr/include/c++/13/bits/uses_allocator.h:
 
-/usr/include/c++/13/bits/std_abs.h:
-
 /usr/include/c++/13/bits/postypes.h:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
 
 /usr/include/c++/13/bits/unordered_set.h:
-
-/usr/include/c++/13/bits/vector.tcc:
-
-/usr/include/c++/13/optional:
-
-/usr/include/c++/13/bits/exception_ptr.h:
-
-/usr/include/c++/13/bits/istream.tcc:
 
 /usr/include/c++/13/bits/max_size_type.h:
 
@@ -360,12 +359,6 @@ CMakeFiles/Deque.dir/main.cpp.o: /mnt/c/Users/Hello/CLionProjects/Deque/main.cpp
 /usr/include/c++/13/bits/functexcept.h:
 
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
-
-/usr/include/c++/13/new:
-
-/usr/include/c++/13/ext/alloc_traits.h:
-
-/usr/include/c++/13/bits/stl_heap.h:
 
 /usr/include/c++/13/bits/stl_construct.h:
 
@@ -401,6 +394,16 @@ CMakeFiles/Deque.dir/main.cpp.o: /mnt/c/Users/Hello/CLionProjects/Deque/main.cpp
 
 /usr/include/c++/13/bits/ranges_algobase.h:
 
+/usr/include/c++/13/bits/ostream_insert.h:
+
+/usr/include/c++/13/compare:
+
+/usr/include/c++/13/system_error:
+
+/usr/include/c++/13/bits/string_view.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
+
 /usr/include/c++/13/cstddef:
 
 /usr/include/c++/13/bits/stl_algo.h:
@@ -427,11 +430,15 @@ CMakeFiles/Deque.dir/main.cpp.o: /mnt/c/Users/Hello/CLionProjects/Deque/main.cpp
 
 /usr/include/x86_64-linux-gnu/bits/endian.h:
 
-/usr/include/x86_64-linux-gnu/gnu/stubs.h:
-
 /usr/include/c++/13/bits/concept_check.h:
 
 /usr/include/c++/13/bits/alloc_traits.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/opt_random.h:
+
+/usr/include/c++/13/ostream:
+
+/usr/include/c++/13/tr1/riemann_zeta.tcc:
 
 /usr/include/c++/13/cassert:
 
@@ -445,12 +452,6 @@ CMakeFiles/Deque.dir/main.cpp.o: /mnt/c/Users/Hello/CLionProjects/Deque/main.cpp
 
 /usr/include/c++/13/bits/locale_facets.h:
 
-/usr/include/c++/13/bits/localefwd.h:
-
-/usr/include/c++/13/bits/streambuf_iterator.h:
-
-/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
-
 /usr/include/c++/13/bits/streambuf.tcc:
 
 /usr/include/c++/13/bits/specfun.h:
@@ -461,23 +462,23 @@ CMakeFiles/Deque.dir/main.cpp.o: /mnt/c/Users/Hello/CLionProjects/Deque/main.cpp
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
 
-/usr/include/c++/13/ext/string_conversions.h:
+/usr/include/c++/13/backward/binders.h:
 
-/usr/include/c++/13/bits/hashtable_policy.h:
+/usr/include/c++/13/ext/string_conversions.h:
 
 /mnt/c/Users/Hello/CLionProjects/Deque/deque.h:
 
+/usr/include/c++/13/bits/hashtable_policy.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 
-/usr/include/c++/13/bits/exception.h:
+/usr/include/c++/13/bits/istream.tcc:
 
-/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+/usr/include/c++/13/bits/exception_ptr.h:
 
-/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
+/usr/include/c++/13/bits/vector.tcc:
 
-/usr/include/c++/13/bits/cxxabi_init_exception.h:
-
-/usr/include/c++/13/typeinfo:
+/usr/include/c++/13/optional:
 
 /usr/include/c++/13/bits/basic_ios.h:
 
@@ -488,6 +489,10 @@ CMakeFiles/Deque.dir/main.cpp.o: /mnt/c/Users/Hello/CLionProjects/Deque/main.cpp
 /usr/include/c++/13/bits/algorithmfwd.h:
 
 /usr/include/x86_64-linux-gnu/bits/fp-logb.h:
+
+/usr/include/c++/13/ext/alloc_traits.h:
+
+/usr/include/c++/13/new:
 
 /usr/include/c++/13/cerrno:
 
@@ -509,19 +514,35 @@ CMakeFiles/Deque.dir/main.cpp.o: /mnt/c/Users/Hello/CLionProjects/Deque/main.cpp
 
 /usr/include/features-time64.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h:
-
-/usr/include/c++/13/numeric:
-
-/usr/include/c++/13/bits/ostream_insert.h:
-
 /usr/include/c++/13/bits/enable_special_members.h:
+
+/usr/include/c++/13/bits/stream_iterator.h:
 
 /usr/include/c++/13/bit:
 
 /usr/include/c++/13/bits/basic_string.tcc:
 
+/usr/include/x86_64-linux-gnu/sys/select.h:
+
+/usr/include/c++/13/cwchar:
+
 /usr/include/c++/13/cwctype:
+
+/usr/include/c++/13/bits/localefwd.h:
+
+/usr/include/c++/13/bits/streambuf_iterator.h:
+
+/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
+
+/usr/include/c++/13/bits/exception.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+
+/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
+
+/usr/include/c++/13/bits/cxxabi_init_exception.h:
+
+/usr/include/c++/13/typeinfo:
 
 /usr/include/assert.h:
 
@@ -531,21 +552,21 @@ CMakeFiles/Deque.dir/main.cpp.o: /mnt/c/Users/Hello/CLionProjects/Deque/main.cpp
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h:
-
 /usr/include/c++/13/algorithm:
+
+/usr/include/c++/13/array:
 
 /usr/include/c++/13/bits/hash_bytes.h:
 
 /usr/include/x86_64-linux-gnu/bits/math-vector.h:
 
-/usr/include/c++/13/backward/binders.h:
+/usr/include/c++/13/bits/basic_ios.tcc:
+
+/usr/include/c++/13/pstl/execution_defs.h:
 
 /usr/include/c++/13/bits/functional_hash.h:
 
 /usr/include/errno.h:
-
-/usr/include/c++/13/bits/ios_base.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h:
 
@@ -559,6 +580,10 @@ CMakeFiles/Deque.dir/main.cpp.o: /mnt/c/Users/Hello/CLionProjects/Deque/main.cpp
 
 /usr/include/c++/13/bits/locale_classes.tcc:
 
+/usr/include/c++/13/bits/ios_base.h:
+
+/usr/include/c++/13/iterator:
+
 /usr/include/c++/13/bits/ranges_algo.h:
 
 /usr/include/c++/13/bits/invoke.h:
@@ -571,17 +596,23 @@ CMakeFiles/Deque.dir/main.cpp.o: /mnt/c/Users/Hello/CLionProjects/Deque/main.cpp
 
 /usr/include/c++/13/bits/memoryfwd.h:
 
+/usr/include/c++/13/bits/stl_heap.h:
+
+/usr/include/c++/13/bits/std_abs.h:
+
+/usr/include/c++/13/bits/parse_numbers.h:
+
 /usr/include/c++/13/ios:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+
+/usr/include/c++/13/bits/node_handle.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
-/usr/include/c++/13/compare:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h:
 
-/usr/include/c++/13/system_error:
-
-/usr/include/c++/13/bits/string_view.tcc:
-
-/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
+/usr/include/c++/13/numeric:
 
 /usr/include/c++/13/pstl/glue_algorithm_defs.h:
 
@@ -592,6 +623,14 @@ CMakeFiles/Deque.dir/main.cpp.o: /mnt/c/Users/Hello/CLionProjects/Deque/main.cpp
 /usr/include/c++/13/random:
 
 /usr/include/c++/13/pstl/pstl_config.h:
+
+/usr/include/c++/13/ranges:
+
+/usr/include/c++/13/string_view:
+
+/usr/include/x86_64-linux-gnu/bits/iscanonical.h:
+
+/usr/include/c++/13/span:
 
 /usr/include/c++/13/stdexcept:
 
@@ -683,10 +722,6 @@ CMakeFiles/Deque.dir/main.cpp.o: /mnt/c/Users/Hello/CLionProjects/Deque/main.cpp
 
 /usr/include/x86_64-linux-gnu/bits/fp-fast.h:
 
-/usr/include/c++/13/string_view:
-
-/usr/include/x86_64-linux-gnu/bits/iscanonical.h:
-
 /usr/include/x86_64-linux-gnu/bits/locale.h:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
@@ -704,10 +739,6 @@ CMakeFiles/Deque.dir/main.cpp.o: /mnt/c/Users/Hello/CLionProjects/Deque/main.cpp
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
-
-/usr/include/c++/13/cwchar:
-
-/usr/include/x86_64-linux-gnu/sys/select.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
 
@@ -778,13 +809,3 @@ CMakeFiles/Deque.dir/main.cpp.o: /mnt/c/Users/Hello/CLionProjects/Deque/main.cpp
 /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h:
-
-/usr/include/c++/13/ostream:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/opt_random.h:
-
-/usr/include/c++/13/bits/node_handle.h:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
-
-/usr/include/x86_64-linux-gnu/sys/cdefs.h:

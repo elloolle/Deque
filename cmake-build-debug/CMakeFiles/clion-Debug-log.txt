@@ -9,5 +9,5 @@ CMake Deprecation Warning:
 
 
 -- Configuring done (0.5s)
--- Generating done (0.4s)
+-- Generating done (0.8s)
 -- Build files have been written to: /mnt/c/Users/Hello/CLionProjects/Deque/cmake-build-debug
