@@ -194,23 +194,4 @@ CMakeFiles/Deque.dir/main.cpp.o: \
  /usr/include/c++/13/pstl/execution_defs.h /usr/include/c++/13/ranges \
  /usr/include/c++/13/iterator /usr/include/c++/13/bits/stream_iterator.h \
  /usr/include/c++/13/span /usr/include/c++/13/array \
- /usr/include/c++/13/variant /usr/include/c++/13/bits/parse_numbers.h \
- /mnt/c/Users/Hello/CLionProjects/Deque/small_tests.h \
- /usr/include/c++/13/cassert /usr/include/assert.h \
- /usr/include/c++/13/cstdint \
- /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
- /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_deque.h \
- /usr/include/c++/13/bits/deque.tcc /usr/include/c++/13/numeric \
- /usr/include/c++/13/bits/stl_numeric.h \
- /usr/include/c++/13/pstl/glue_numeric_defs.h /usr/include/c++/13/random \
- /usr/include/c++/13/bits/random.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/opt_random.h \
- /usr/include/c++/13/bits/random.tcc /usr/include/c++/13/unordered_set \
- /usr/include/c++/13/bits/unordered_set.h \
- /usr/include/c++/13/bits/hashtable.h \
- /usr/include/c++/13/bits/hashtable_policy.h \
- /usr/include/c++/13/ext/aligned_buffer.h \
- /usr/include/c++/13/bits/node_handle.h \
- /usr/include/c++/13/bits/erase_if.h
+ /usr/include/c++/13/variant /usr/include/c++/13/bits/parse_numbers.h

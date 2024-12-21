@@ -1,7 +1,8 @@
 #include <iostream>
 #include <string>
+#include <vector>
 #include "deque.h"
-#include "small_tests.h"
+// #include "tests.h"
 using namespace std;
 template<typename T>
 bool equal(const Deque<T>& d1, const Deque<T>& d2) {
@@ -10,6 +11,8 @@ bool equal(const Deque<T>& d1, const Deque<T>& d2) {
   return d1.to_string2() == d2.to_string2();
 }
 int main() {
-  test6();
-  // Deque<int> d;
+  // test6();
+  Deque<int> d;
+
+  Deque<int>::iterator left1 = operator+(d.cbegin(), 100'000);
 }

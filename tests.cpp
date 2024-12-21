@@ -10,10 +10,10 @@
 #include <unordered_set>
 #include <vector>
 
-// #include "deque.h"
+#include "deque.h"
 
-template <typename T>
-using Deque = std::deque<T>;
+// template <typename T>
+// using Deque = std::deque<T>;
 
 namespace TestsByMesyarik {
 
@@ -95,6 +95,7 @@ void test3() {
   assert(d.size() == 334'000);
 
   Deque<int>::iterator left = d.begin() + 100'000;
+  Deque<int>::iterator left1 = operator+(d.begin(), 100'000);
   Deque<int>::iterator right = d.end() - 233'990;
   while (d.begin() != left)
     d.pop_front();
