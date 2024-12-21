@@ -14,15 +14,14 @@ bool equal(const Deque<T>& d1, const Deque<T>& d2) {
 }
 struct S {
   int y = 0;
-  S& operator+=(int x) {
-    y+=x;
-  }
 };
 int main() {
   // test6();
-  Deque<S> d;
-  // vector<int>::iterator it1 = 1+it;
-  auto a = d.rbegin();
-  a.operator->()->y;
-  a->y;
+  Deque<int> d;
+  for (int i = 0; i < 10; ++i) {
+    d.push_back(i);
+  }
+  d.Print();
+  d.insert(d.begin()+3,100);
+  d.Print();
 }

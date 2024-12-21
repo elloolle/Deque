@@ -75,10 +75,12 @@ struct Deque {
   }
   void DeleteAllBackets() {
     DeleteBackets();
-    DeleteLastBacket(firstBacketRef(), firstElement, kBacketSize - 1);
     if (firstBacket == lastBacket) {
+      DeleteLastBacket(firstBacketRef(),firstElement,lastElement);
       return;
     }
+
+    DeleteLastBacket(firstBacketRef(), firstElement, kBacketSize - 1);
     DeleteLastBacket(lastBacketRef(), 0, lastElement);
   }
 
@@ -135,7 +137,8 @@ struct Deque {
     backets += half_size();
   }
 
-  Deque(): backets_size(0),
+  Deque(): backets(nullptr),
+           backets_size(0),
            sz(0),
            firstBacket(0),
            lastBacket(0) {
@@ -192,6 +195,11 @@ struct Deque {
 
   ~Deque() {
     if (sz == 0) {
+      if(backets == nullptr) {
+        return;
+      }
+      T** copy_backets = backets - half_size();
+      delete[] copy_backets;
       return;
     }
     DeleteAllBackets();
@@ -225,7 +233,7 @@ struct Deque {
   }
   T& at(size_t i) {
     size_t pos = firstElement + i % kBacketSize;
-    int backet = firstBacket + i / kBacketSize + pos / kBacketSize;
+    long long backet = firstBacket + i / kBacketSize + pos / kBacketSize;
     pos %= kBacketSize;
     if (backet > lastBacket) {
       throw std::out_of_range("Invalid index");
@@ -253,13 +261,20 @@ struct Deque {
     }
     return backets[backet][pos];
   }
+  void moveAllBackets(Deque& d) {
+    for (int i = d.firstBacket; i <= d.lastBacket; ++i) {
+      backets[i] = d.backets[i];
+      d.backets[i] = nullptr;
+    }
+    d.sz = 0;
+  }
   void reserve(size_t new_backets_size) {
     Deque copy = std::move(*this);
     allocate_memory(new_backets_size);
     // allocate_memory меняет backets и backets_size,
     // a все остальные поля имеют тривиальные типы, поэтому
     // при std::move они скопируются и не поменяют значения
-    copyAllBackets(copy);
+    moveAllBackets(copy);
   }
   void pop_back() {
     backets[lastBacket][lastElement].~T();
@@ -344,17 +359,25 @@ struct Deque {
                      || (is_const && !other_const)>* = nullptr)
         : backet(it.backet), index(it.index) {}
     universe_iterator& operator+=(int n) {
-      index += n % kBacketSize;
-      backet += n % kBacketSize + index / kBacketSize;
-      index%=kBacketSize;
+      // Обработка индекса
+      int new_index = static_cast<int>(index) + (n % kBacketSize);
+      int bucket_shift = n / kBacketSize;
+
+      // Коррекция для отрицательного индекса
+      if (new_index < 0) {
+        new_index += kBacketSize;
+        bucket_shift--;
+      } else if (new_index >= kBacketSize) {
+        new_index -= kBacketSize;
+        bucket_shift++;
+      }
+
+      backet += bucket_shift;
+      index = static_cast<size_t>(new_index);
       return *this;
     }
     universe_iterator& operator-=(int n) {
-      n = -n;
-      index += n % kBacketSize;
-      backet += n % kBacketSize + index / kBacketSize;
-      index%=kBacketSize;
-      return *this;
+      return operator+=(-n);
     }
     universe_iterator& operator++() {
       return operator+=(1);
@@ -380,7 +403,7 @@ struct Deque {
     }
 
     difference_type operator-(const universe_iterator& it)const {
-      return (backet-it.backet)*kBacketSize + index - it.index;
+      return (backet-it.backet)*kBacketSize + static_cast<long long>(index) -  static_cast<long long>(it.index);
     }
     friend universe_iterator operator+(int n, const universe_iterator& it) {
       auto copy = it;
@@ -423,19 +446,32 @@ struct Deque {
     }
   };
 
+
   iterator begin() {
+    if(sz==0) {
+      return iterator{nullptr,0};
+    }
     return iterator{backets+firstBacket,firstElement};
   }
   const_iterator cbegin()const {
+    if(sz==0) {
+      return iterator{nullptr,0};
+    }
     return const_iterator{backets+firstBacket,firstElement};
   }
   const_iterator begin()const {
     return cbegin();
   }
   iterator end() {
+    if(sz==0) {
+      return iterator{nullptr,0};
+    }
     return iterator{backets+lastBacket,lastElement+1};
   }
   const_iterator cend()const {
+    if(sz==0) {
+      return iterator{nullptr,0};
+    }
     return const_iterator{backets+lastBacket,lastElement+1};
   }
   const_iterator end()const {
@@ -458,6 +494,24 @@ struct Deque {
   }
   const_reverse_iterator rend()const {
     return reverse_iterator(begin());
+  }
+
+
+  void insert(const iterator& it, const T& value) {
+    auto pos = it-begin();
+    push_back(value);
+    auto end_element = end();
+    auto new_it = begin()+pos;
+    for(auto i = end_element-1; i>new_it;--i) {
+      *i = *(i-1);
+    }
+    *(new_it) = value;
+  }
+  void erase(const iterator& it) {
+    for(auto i = it;i<end()-1;++i) {
+      *i = *(i+1);
+    }
+    pop_back();
   }
   void Print() const {
     for (int i = 0; i < size(); ++i) {

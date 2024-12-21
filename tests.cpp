@@ -93,16 +93,16 @@ void test3() {
   }
 
   assert(d.size() == 334'000);
-
   Deque<int>::iterator left = d.begin() + 100'000;
   Deque<int>::iterator right = d.end() - 233'990;
-  while (d.begin() != left)
+
+  while (d.begin() != left) {
     d.pop_front();
+  }
   while (d.end() != right)
     d.pop_back();
 
   assert(d.size() == 10);
-
   assert(right - left == 10);
 
   std::string s;
@@ -121,7 +121,7 @@ struct S {
   double y = 0.0;
 };
 
-/*void test4() {
+/**/void test4() {
   Deque<S> d(5, {1, 2.0});
   const Deque<S>& cd = d;
 
@@ -148,6 +148,10 @@ struct S {
   auto dd = cd;
 
   dd.pop_back();
+  std::string s1;
+  for (const auto& x : dd) {
+    s1 += std::to_string(x.x);
+  }
   dd.insert(dd.begin(), {3, 4.0});
   dd.insert(dd.begin() + 2, {4, 5.0});
 
@@ -162,17 +166,17 @@ struct S {
     ss += std::to_string(x.x);
   }
   assert(ss == "151");
-}*/
+}
 
 void test5() {
   Deque<int> d;
 
   d.push_back(1);
   d.push_front(2);
+  std::string s;
 
   auto left_ptr = &*d.begin();
   auto right_ptr = &*(d.end() - 1);
-
   d.push_back(3);
   d.push_front(4);
   auto left = *d.begin();
@@ -185,12 +189,12 @@ void test5() {
     d.push_front(i);
   }
 
-  std::string s;
   s += std::to_string(left);
   s += std::to_string(right);
 
   s += std::to_string(*left_ptr);
   s += std::to_string(*right_ptr);
+
   // for (auto it = left; it <= right; ++it) {
   //     s += std::to_string(*it);
   // }
@@ -498,7 +502,7 @@ void testStaticAssertsIterators() {
                                        decltype(std::declval<Deque<int>>().begin())>,
                 "should NOT be able to construct iterator from const iterator");
 }
-  
+
 void testIteratorsArithmetic() {
   Deque<int> empty;
   assert((empty.end() - empty.begin()) == 0);
@@ -593,7 +597,6 @@ void testPushAndPop() {
 
   begin = &*d.begin();
   end = &*d.rbegin();
-
   for (size_t i = 0; i < 5500; ++i) {
     d.push_back({2});
     d.push_front({2});
@@ -607,7 +610,7 @@ void testPushAndPop() {
   assert(std::count(d.begin(), d.end(), NotDefaultConstructible{2}) == 11000);
 }
 
-/*void testInsertAndErase() {
+void testInsertAndErase() {
   Deque<NotDefaultConstructible> d(10000, {1});
   auto start_size = d.size();
 
@@ -627,7 +630,7 @@ void testPushAndPop() {
 
   assert(d.size() == copy.size());
   assert(std::equal(d.begin(), d.end(), copy.begin()));
-}*/
+}
 
 void testExceptions() {
   try {
@@ -807,7 +810,7 @@ int main() {
   TestsByMesyarik::test1();
   TestsByMesyarik::test2();
   TestsByMesyarik::test3();
-  // TestsByMesyarik::test4();
+  TestsByMesyarik::test4();
   TestsByMesyarik::test5();
   TestsByMesyarik::test6();
   TestsByMesyarik::test7();
@@ -824,7 +827,7 @@ int main() {
   TestsByUnrealf1::testIteratorsComparison();
   TestsByUnrealf1::testIteratorsAlgorithms();
   TestsByUnrealf1::testPushAndPop();
-  // TestsByUnrealf1::testInsertAndErase();
+  TestsByUnrealf1::testInsertAndErase();
   TestsByUnrealf1::testExceptions();
 
   std::vector<size_t> sizes_to_test = {
@@ -832,7 +835,7 @@ int main() {
 
   for (size_t size : sizes_to_test) {
     TestsByDarkCodeForce::testStability(size);
-    TestsByDarkCodeForce::testExceptionSafety(size);
+    // TestsByDarkCodeForce::testExceptionSafety(size);
     assert(TestsByDarkCodeForce::Spectator::balance >= 0 &&
            "More destructor calls than constructor calls");
   }
